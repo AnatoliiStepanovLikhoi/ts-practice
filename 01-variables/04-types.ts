@@ -1,6 +1,6 @@
 // Boolean
 let isDone: boolean = false;
-// isDone = 1; // Type 'number' is not assignable to type 'boolean'
+isDone = true; // Type 'number' is not assignable to type 'boolean'
 
 console.log(isDone);
 
@@ -21,17 +21,18 @@ console.log(a5_octal);
 const firstName: string = "Ivan";
 const age: number = 25;
 const messageTemplate: string = `Hello, my name is ${firstName} I'm ${age} years old.`; // template string
-const messageConcat: string = 'Hello, my name is ' + firstName + " I'm " + age + ' years old.'; // concatenation
+const messageConcat: string =
+  "Hello, my name is " + firstName + " I'm " + age + " years old."; // concatenation
 
-console.log(messageTemplate);
-console.log(messageConcat);
+// console.log(messageTemplate);
+// console.log(messageConcat);
 
 // Symbol
 // потрібно додати в tsconfig.json "lib": ["dom", "es2015"]
-const mySymbol1: Symbol = Symbol('typescript');
+const mySymbol1: Symbol = Symbol("typescript");
 console.log(mySymbol1);
 
-const mySymbol2: Symbol = Symbol('typescript');
+const mySymbol2: Symbol = Symbol("typescript");
 console.log(mySymbol2);
 
 console.log(mySymbol1 === mySymbol2);

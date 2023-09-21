@@ -5,24 +5,24 @@
 // і після будь-якого блоку {}
 
 function var1() {
-    console.log(i); // undefined
-    console.log(test); // undefined
+  console.log(i); // undefined
+  console.log(test); // undefined
 
-    for (var i = 0; i < 10; i++) {
-        var test = i;
-    }
+  for (var i = 0; i < 10; i++) {
+    var test = i;
+  }
 
-    console.log(i); // 10
-    console.log(test); // 9
+  console.log(i); // 10
+  console.log(test); // 9
 }
 
-var1();
+// var1();
 
 // Повторне визначення змінної не призводить до помилки.
 function var2() {
-    var a = 10;
-    var a = 20;
-    console.log(a); // 20
+  var a = 10;
+  var a = 20;
+  console.log(a); // 20
 }
 
 var2();
@@ -34,11 +34,11 @@ var2();
 // області видимості функції f3, тому всі виклики
 // setTimeout у результаті використовували одне значення
 function var3() {
-    for (var i = 0; i < 5; i++) {
-        setTimeout(function () {
-            console.log(i);
-        }, 10);
-    }
+  for (var i = 0; i < 5; i++) {
+    setTimeout(function () {
+      console.log(i);
+    }, 10);
+  }
 }
 
 var3();
