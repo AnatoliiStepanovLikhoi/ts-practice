@@ -1,11 +1,10 @@
 {
-  "compilerOptions": {
-    "module": "CommonJS",
-    "noImplicitAny": true,
-    "removeComments": true,
-    "sourceMap": true,
-    "outDir": "./dist"
-  },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules"]
+    "compilerOptions": {
+        "module": "commonjs",
+        "sourceMap": true,
+        "outDir": "dist",
+        "lib": ["dom", "es2015"]
+    },
+    "include": ["./**/*.ts"],
+    "exclude": ["node_modules"]
 }
