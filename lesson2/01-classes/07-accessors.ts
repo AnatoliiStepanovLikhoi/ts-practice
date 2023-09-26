@@ -1,40 +1,40 @@
 class Rectangle {
-    private _width: number;
-    private _height: number;
+  private _width: number;
+  private _height: number;
 
-    // метод для отримання значення закритої властивості
-    public getWidth(): number {
-        return this._width;
+  // метод для отримання значення закритої властивості
+  getWidth(): number {
+    return this._width;
+  }
+
+  // метод для встановлення значення закритій властивості
+  public setWidth(value: number): void {
+    if (value <= 0) {
+      this._width = 1;
+    } else {
+      this._width = value;
     }
+  }
 
-    // метод для встановлення значення закритій властивості
-    public setWidth(value: number): void {
-        if (value <= 0) {
-            this._width = 1;
-        } else {
-            this._width = value;
-        }
+  // accessors - механізм, який дозволяє перехопити звернення до члена об'єкта на запис чи читання.
+
+  // getter
+  get height(): number {
+    return this._height;
+  }
+
+  // setter
+  set height(value: number) {
+    if (value <= 0) {
+      this._height = 1;
+    } else {
+      this._height = value;
     }
+  }
 
-    // accessors - механізм, який дозволяє перехопити звернення до члена об'єкта на запис чи читання.
-
-    // getter
-    get height(): number {
-        return this._height;
-    }
-
-    // setter
-    set height(value: number) {
-        if (value <= 0) {
-            this._height = 1;
-        } else {
-            this._height = value;
-        }
-    }
-
-    public calculateArea(): number {
-        return this._width * this._height;
-    }
+  public calculateArea(): number {
+    return this._width * this._height;
+  }
 }
 
 const rect: Rectangle = new Rectangle();
