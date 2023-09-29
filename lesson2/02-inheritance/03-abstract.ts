@@ -5,34 +5,34 @@
 
 // абстрактний клас
 abstract class Animal {
-    constructor(public name: string) {}
+  constructor(public name: string) {}
 
-    abstract makeSound(): void; // абстрактний метод
+  abstract makeSound(): void; // абстрактний метод
 
-    public move(): void {
-        console.log(this.name + ' пересувається');
-    }
+  public move(): void {
+    console.log(this.name + " пересувається");
+  }
 }
 
 class Cat extends Animal {
-    constructor() {
-        super('Кіт');
-    }
+  constructor() {
+    super("Кіт");
+  }
 
-    // обов'язкова реалізація абстрактного методу із базового класу. Спробуйте видалити цей метод із класу Cat
-    makeSound(): void {
-        console.log('Мяу-Мяу');
-    }
+  // обов'язкова реалізація абстрактного методу із базового класу. Спробуйте видалити цей метод із класу Cat
+  makeSound(): void {
+    console.log("Мяу-Мяу");
+  }
 }
 
 class Cow extends Animal {
-    constructor() {
-        super('Корова');
-    }
+  constructor() {
+    super("Корова");
+  }
 
-    makeSound(): void {
-        console.log('My-y-y-y-y');
-    }
+  makeSound(): void {
+    console.log("My-y-y-y-y");
+  }
 }
 
 const murzik: Animal = new Cat();
@@ -41,6 +41,6 @@ murzik.move();
 
 const burenka: Animal = new Cow();
 burenka.makeSound();
-burenka.move();
+// burenka.move();
 
 // const animal: Animal = new Animal('animal');
