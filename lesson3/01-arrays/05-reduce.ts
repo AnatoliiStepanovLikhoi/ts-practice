@@ -18,45 +18,45 @@
 const values: number[] = [10, 2, 3, 4, 5, 6];
 
 const total: number = values.reduce((prev, current) => {
-  console.log('prev ' + prev + ' current ' + current);
+  // console.log("prev " + prev + " current " + current);
   return prev + current;
 }, 0);
 
-console.log(total);
+// console.log(total);
 
 // Cписок літер які можуть повторятись
-const chars = ['a', 'b', 'c', 'a', 'c', 'a'];
+const chars = ["a", "b", "c", "a", "c", "a"];
 
 // Подібна задача вирішувалась методом forEach
-const charsRepeat = chars.reduce((prev, current) => {
-  if (prev[current]) {
-    prev[current] += 1;
+const charsRepeat = chars.reduce((acc, current) => {
+  if (acc[current]) {
+    acc[current] += 1;
   } else {
-    prev[current] = 1;
+    acc[current] = 1;
   }
 
-  return prev;
+  return acc;
 }, {});
 
 console.log(charsRepeat);
 
 // Оптимізація коду з методом reduce
 const usersList = [
-  { name: 'Андрій', role: 'client' },
-  { name: 'Степан', role: 'admin' },
-  { name: 'Іван', role: 'client' },
-  { name: 'Микола', role: 'client' },
+  { name: "Андрій", role: "client" },
+  { name: "Степан", role: "admin" },
+  { name: "Іван", role: "client" },
+  { name: "Микола", role: "client" },
 ];
 
 const res1 = usersList
-  .filter(user => user.role === 'client')
-  .map(user => user.name);
-console.log(res1);
+  .filter((user) => user.role === "client")
+  .map((user) => user.name);
+// console.log(res1);
 
-const res2 = usersList.reduce((prev, user) => {
-  if (user.role === 'client') {
-    prev.push(user.name);
+const res2 = usersList.reduce((acc, user) => {
+  if (user.role === "client") {
+    acc.push(user.name);
   }
-  return prev;
+  return acc;
 }, []);
 console.log(res2);
