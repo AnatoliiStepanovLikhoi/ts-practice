@@ -18,6 +18,6 @@ console.log(myGenericNumber.method2());
 
 // Екземпляр узагальненого типу, закритого типом string
 const myGenericString = new MyGenericClass<string>();
-myGenericString.method1('hello');
-myGenericString.value = 'world';
+myGenericString.method1("hello");
+myGenericString.value = "world";
 console.log(myGenericString.method2());
