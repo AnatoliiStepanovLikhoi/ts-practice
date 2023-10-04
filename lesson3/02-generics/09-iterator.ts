@@ -67,3 +67,18 @@ while (!next.done) {
   console.log(next.value);
   next = iterator.next();
 }
+
+//recursive types
+type NestedNumber = NestedNumber[] | number;
+const numbers1: NestedNumber = [1, 3, [12, [3, 4]]];
+
+type JSONPrimitive = string | number | boolean | null;
+type JSONObject = {
+  [k: string]: JSONValue;
+};
+type JSONArray = JSONValue[];
+type JSONValue = JSONPrimitive | JSONObject | JSONArray;
+
+type NonNullableQuery<T> = {
+  [Prop in keyof T]-?: NonNullableQuery<NonNullable<T[Prop]>>;
+};
