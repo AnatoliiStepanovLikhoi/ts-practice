@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 // Змінні, створені з використанням ключового слова var,
 // знаходяться у глобальній області видимості або
 // локальної області видимості, яка представлена ​​функцією.
@@ -42,3 +44,11 @@ function var3() {
 }
 
 var3();
+
+///Fetch todos
+
+const URL1: string = 'https://jsonplaceholder.typicode.com/todos/1';
+
+axios.get(URL1).then((res) => {
+  console.log(res.data);
+});

@@ -1,10 +1,13 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "sourceMap": true,
-        "outDir": "dist",
-        "lib": ["dom", "es2015"]
-    },
-    "include": ["./**/*.ts"],
-    "exclude": ["node_modules"]
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "sourceMap": true,
+    "outDir": "dist",
+    "lib": ["dom", "es2015"],
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node"
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules"]
 }
