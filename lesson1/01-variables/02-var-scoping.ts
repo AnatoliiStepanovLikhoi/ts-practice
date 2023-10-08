@@ -27,7 +27,7 @@ function var2() {
   console.log(a); // 20
 }
 
-var2();
+// var2();
 
 // такий цикл виведе на екран 5, 5, 5, 5, 5
 // замість очікуваних 0, 1, 2, 3, 4
@@ -43,12 +43,32 @@ function var3() {
   }
 }
 
-var3();
+// var3();
 
 ///Fetch todos
 
-const URL1: string = 'https://jsonplaceholder.typicode.com/todos/1';
+const URL1: string = 'https://jsonplaceholder.typicode.com/todos/3';
+
+interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
 
 axios.get(URL1).then((res) => {
-  console.log(res.data);
+  const todo: Todo = res.data;
+
+  const ID = todo.id;
+  const title = todo.title;
+  const completed = todo.completed;
+
+  logTodo(ID, title, completed);
 });
+
+const logTodo = (id: number, title: string, completed: boolean): void => {
+  console.log(`
+  The Todo with ID: ${id},
+  Has title of: ${title},
+  Is it finished? ${completed},
+  `);
+};
