@@ -5,13 +5,17 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "tsc -w"
+    "start:build": "tsc -w",
+    "start:run": "nodemon dist/01-variables/03-let-scoping.js",
+    "start": "concurrently npm:start:*"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.5.1",
+    "concurrently": "^8.2.1",
+    "nodemon": "^3.0.1",
     "typescript": "^5.2.2"
   },
   "devDependencies": {

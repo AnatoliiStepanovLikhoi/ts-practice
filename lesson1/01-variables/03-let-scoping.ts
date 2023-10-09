@@ -31,4 +31,12 @@ function let3() {
   }
 }
 
-let3();
+// let3();
+
+//Sorting function
+
+const logSomething = (): void => {
+  console.log('something new');
+};
+
+logSomething();
