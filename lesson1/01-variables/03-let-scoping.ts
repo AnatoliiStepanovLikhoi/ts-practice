@@ -36,7 +36,7 @@ function let3() {
 //Sorting function
 
 class Sorter {
-  constructor(public collection: number[]) {
+  constructor(public collection: number[] | string) {
     this.collection = collection;
   }
 
@@ -45,10 +45,18 @@ class Sorter {
 
     for (let i = 0; i < length; i++) {
       for (let j = 0; j < length - i - 1; j++) {
-        if (this.collection[j] > this.collection[j + 1]) {
-          const temp = this.collection[j];
-          this.collection[j] = this.collection[j + 1];
-          this.collection[j + 1] = temp;
+        //If collection is array of numbers
+        if (this.collection instanceof Array) {
+          if (this.collection[j] > this.collection[j + 1]) {
+            const temp = this.collection[j];
+            this.collection[j] = this.collection[j + 1];
+            this.collection[j + 1] = temp;
+          }
+        }
+
+        //If collection is array of string
+        if (typeof this.collection === 'string') {
+          this.collection;
         }
       }
     }
