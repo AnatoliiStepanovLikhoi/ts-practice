@@ -1,3 +1,6 @@
+// import { Sorter } from './Sorter';
+// import { NumbersCollection } from './NumbersCollection';
+
 function let1() {
   //   console.log(i); // Cannot find name 'i'
   //   console.log(test); // Cannot find name 'test'
@@ -36,35 +39,42 @@ function let3() {
 //Sorting function
 
 class Sorter {
-  constructor(public collection: number[] | string) {
-    this.collection = collection;
-  }
+  constructor(public collection: NumbersCollection) {}
 
   sort(): void {
     const { length } = this.collection;
 
     for (let i = 0; i < length; i++) {
       for (let j = 0; j < length - i - 1; j++) {
-        //If collection is array of numbers
-        if (this.collection instanceof Array) {
-          if (this.collection[j] > this.collection[j + 1]) {
-            const temp = this.collection[j];
-            this.collection[j] = this.collection[j + 1];
-            this.collection[j + 1] = temp;
-          }
-        }
-
-        //If collection is array of string
-        if (typeof this.collection === 'string') {
-          this.collection;
+        if (this.collection.compare(j, j + 1)) {
+          this.collection.swap(j, j + 1);
         }
       }
     }
   }
 }
 
-const sorter = new Sorter([10, 3, -5, 0]);
+class NumbersCollection {
+  constructor(public data: number[]) {
+    this.data = data;
+  }
 
+  get length(): number {
+    return this.data.length;
+  }
+
+  compare(leftIndex: number, rightIndex: number): boolean {
+    return this.data[leftIndex] > this.data[rightIndex];
+  }
+
+  swap(leftIndex: number, rightIndex: number): void {
+    const temp = this.data[leftIndex];
+    this.data[leftIndex] = this.data[rightIndex];
+    this.data[rightIndex] = temp;
+  }
+}
+
+const numbersCollection = new NumbersCollection([10000, 3, -5, 0]);
+const sorter = new Sorter(numbersCollection);
 sorter.sort();
-
-console.log(sorter.collection);
+console.log(numbersCollection.data);
