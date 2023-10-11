@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start:build": "tsc -w",
-    "start:run": "nodemon dist/01-variables/03-let-scoping.js",
+    "start:run": "nodemon dist/01-variables/08-any.js",
     "start": "concurrently npm:start:*"
   },
   "keywords": [],
