@@ -44,7 +44,11 @@ interface Sortable {
   swap(leftIndex: number, rightIndex: number): void;
 }
 
-class Sorter {
+abstract class Sorter {
+  abstract compare(leftIndex: number, rightIndex: number): boolean;
+  abstract swap(leftIndex: number, rightIndex: number): void;
+  abstract length: number;
+
   sort(): void {
     const { length } = this;
 
@@ -79,8 +83,9 @@ class NumbersCollection extends Sorter {
   }
 }
 
-class CharactersCollection {
+class CharactersCollection extends Sorter {
   constructor(public data: string) {
+    super();
     this.data = data;
   }
 
@@ -105,12 +110,16 @@ class CharactersCollection {
   }
 }
 
-// const numbersCollection = new NumbersCollection([10000, 3, -5, 0]);
+const numbersCollection = new NumbersCollection([10000, 3, -5, 0]);
 // const sorter = new Sorter(numbersCollection);
 // sorter.sort();
+
+// numbersCollection.sort();
 // console.log(numbersCollection.data);
 
-// const charactersCollection = new CharactersCollection('Xaayb');
+const charactersCollection = new CharactersCollection('Xaayb');
 // const sorter = new Sorter(charactersCollection);
 // sorter.sort();
+
+// charactersCollection.sort();
 // console.log(charactersCollection.data);

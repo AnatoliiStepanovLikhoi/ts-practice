@@ -26,16 +26,34 @@ interface Sortable {
   swap(leftIndex: number, rightIndex: number): void;
 }
 
-class Sorter1 {
-  constructor(public collection: Sortable) {}
+// class Sorter1 {
+//   constructor(public collection: Sortable) {}
+
+//   sort(): void {
+//     const { length } = this.collection;
+
+//     for (let i = 0; i < length; i++) {
+//       for (let j = 0; j < length - i - 1; j++) {
+//         if (this.collection.compare(j, j + 1)) {
+//           this.collection.swap(j, j + 1);
+//         }
+//       }
+//     }
+//   }
+// }
+
+abstract class Sorter1 {
+  abstract compare(leftIndex: number, rightIndex: number): boolean;
+  abstract swap(leftIndex: number, rightIndex: number): void;
+  abstract length: number;
 
   sort(): void {
-    const { length } = this.collection;
+    const { length } = this;
 
     for (let i = 0; i < length; i++) {
       for (let j = 0; j < length - i - 1; j++) {
-        if (this.collection.compare(j, j + 1)) {
-          this.collection.swap(j, j + 1);
+        if (this.compare(j, j + 1)) {
+          this.swap(j, j + 1);
         }
       }
     }
@@ -48,7 +66,7 @@ class Nodes {
   constructor(public data: number) {}
 }
 
-class LinkedList {
+class LinkedList extends Sorter1 {
   head: Nodes | null = null;
 
   add(data: number): void {
@@ -139,6 +157,6 @@ linkedList.add(-10);
 linkedList.add(-3);
 linkedList.add(4);
 
-const sorter = new Sorter1(linkedList);
-sorter.sort();
+// const sorter = new Sorter1(linkedList);
+linkedList.sort();
 linkedList.print();
