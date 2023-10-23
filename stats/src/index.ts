@@ -5,6 +5,9 @@ const reader = new CsvFileReader('football.csv');
 
 reader.read();
 
+// const dateOfFirstMatch = reader.data[0][0];
+// console.log(dateOfFirstMatch);
+
 // const matches = fs
 //   .readFileSync('football.csv', {
 //     encoding: 'utf-8',
