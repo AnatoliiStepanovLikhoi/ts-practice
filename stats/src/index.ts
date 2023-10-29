@@ -1,7 +1,7 @@
 // import { CsvFileReader } from './CsvFileReader';
 import { MatchReader } from './MatchReader';
 import { MatchSummary } from './MatchSummary';
-// import { MatchResult } from './MatchResult';
+import { MatchResult } from './MatchResult';
 // import { CsvFileReader } from './CsvFileReader';
 // import { ConsoleReport } from './reportTargets/ConsoleReport';
 // import { WinsAnalysys } from './analyzers/WinsAnalysis';
