@@ -18,21 +18,33 @@ console.log(a4_binary);
 console.log(a5_octal);
 
 // String
-const firstName: string = "Ivan";
+const firstName: string = 'Ivan';
 const age: number = 25;
 const messageTemplate: string = `Hello, my name is ${firstName} I'm ${age} years old.`; // template string
 const messageConcat: string =
-  "Hello, my name is " + firstName + " I'm " + age + " years old."; // concatenation
+  'Hello, my name is ' + firstName + " I'm " + age + ' years old.'; // concatenation
 
 // console.log(messageTemplate);
 // console.log(messageConcat);
 
 // Symbol
 // потрібно додати в tsconfig.json "lib": ["dom", "es2015"]
-const mySymbol1: Symbol = Symbol("typescript");
+const mySymbol1: Symbol = Symbol('typescript');
 console.log(mySymbol1);
 
-const mySymbol2: Symbol = Symbol("typescript");
+const mySymbol2: Symbol = Symbol('typescript');
 console.log(mySymbol2);
 
 console.log(mySymbol1 === mySymbol2);
+
+// Types examples
+
+const today = new Date();
+today.getMonth();
+
+const person = {
+  age: 20,
+};
+
+// class Color {}
+// const red = new Color()
