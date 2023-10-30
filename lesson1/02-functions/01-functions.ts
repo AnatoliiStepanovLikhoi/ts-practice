@@ -93,3 +93,23 @@ for (let i = 0; i < numbers.length; i++) {
     numberAboveZero = numbers[i];
   }
 }
+
+// Objects
+
+const profile = {
+  name: 'alex',
+  currentAge: 20,
+  coords: {
+    lat: 0,
+    lng: 15,
+  },
+
+  setAge(age: number): void {
+    this.currentAge = age;
+  },
+};
+
+const { currentAge }: { currentAge: number } = profile;
+const {
+  coords: { lat, lng },
+}: { coords: { lat: number; lng: number } } = profile;
