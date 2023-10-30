@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start:build": "tsc -w",
-    "start:run": "nodemon dist/01-variables/08-any.js",
+    "start:run": "nodemon dist/02-functions/01-functions.js",
     "start": "concurrently npm:start:*"
   },
   "keywords": [],
