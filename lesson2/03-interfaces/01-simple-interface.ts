@@ -6,10 +6,10 @@ function printValue1(obj: { name: string }) {
   console.log(obj.name);
 }
 
-const myObj1 = { value: 10, name: "Hello World" };
+const myObj1 = { value: 10, name: 'Hello World' };
 printValue1(myObj1); // myObj1 має властивість name
 
-const myObj2 = { data: 10, name2: "Hello World" };
+const myObj2 = { data: 10, name2: 'Hello World' };
 // printValue1(myObj2); // myObj2 не може використовуватися як параметр, тому що не має властивості name
 
 // -------------------------------------------
@@ -31,5 +31,35 @@ function printValue2(obj: NamedValue): void {
 printValue2(myObj1); // myObj1 має властивість name
 // printValue2(myObj2); // myObj2 не може використовуватися як параметр, тому що не має властивості name
 
-const myObj3: NamedValue = { name: "World" };
+const myObj3: NamedValue = { name: 'World' };
 printValue2(myObj3); // myObj3 реалзіує інтерфейс NamedValue
+
+//Fixing annotations
+
+interface Vehicle {
+  name: string;
+  year: Date;
+  broken: boolean;
+
+  summary(): string;
+}
+
+const oldCivic = {
+  name: 'civic',
+  year: new Date(),
+  broken: true,
+
+  summary(): string {
+    return `Name: ${this.name}`;
+  },
+};
+
+const printVehicle = (vehicle: Vehicle): void => {
+  // console.log(`Name: ${vehicle.name}`);
+  // console.log(`Year: ${vehicle.year}`);
+  // console.log(`Broken: ${vehicle.broken}`);
+
+  console.log(vehicle.summary());
+};
+
+printVehicle(oldCivic);
