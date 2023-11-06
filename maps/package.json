@@ -1,5 +1,9 @@
 {
   "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "posthtml-expressions": "^1.11.2"
   }
 }
