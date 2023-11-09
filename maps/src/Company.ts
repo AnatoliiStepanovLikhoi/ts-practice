@@ -16,4 +16,13 @@ export class Company {
       lng: faker.location.longitude(),
     };
   }
+
+  markerContent(): string {
+    return `
+    <div>
+    <h1>Company name: ${this.companyName}</h1> 
+    <h3>Catch Phrase: ${this.catchPhrase}</h3>
+    </div>
+    `;
+  }
 }

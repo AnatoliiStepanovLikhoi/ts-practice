@@ -1,6 +1,5 @@
 import { Company } from './Company';
 import { User } from './User';
-// import { Company } from './Company';
 import { CustomMap } from './customMap';
 
 const user = new User();
